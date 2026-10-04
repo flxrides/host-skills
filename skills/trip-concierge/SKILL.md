@@ -10,6 +10,16 @@ platforms:
 - linux
 metadata:
   flx:
+    title: Answer trip requests by your rules
+    why: "Every trip request is checked against the rules you wrote. The ones that fit come to you with a reason to accept; the rest are declined or get new dates."
+    never:
+    - "It never accepts a trip. It recommends, with a reason, and you decide."
+    - "It can’t reprice a car, message a driver outside the trip, or move money."
+    mode: waits
+    preview:
+      title: "Devon’s request"
+      body: "The Civic is out until Oct 12, so I proposed Oct 13–27. Devon has been told."
+    waits: Accepting a trip waits for you
     tools:
     - read_trip_requests
     - read_policy
@@ -27,8 +37,7 @@ metadata:
     - flx
     jobs:
     - answer-faster
-    flow: Every 15 minutes → reads trip requests and your rules → responds, screens and records drop-offs
-      (money and screening wait for you)
+    flow: Every 15 minutes → reads trip requests and your rules → declines what breaks them and proposes dates that work → you approve the ones that fit
     agents:
     - openclaw
     - hermes

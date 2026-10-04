@@ -10,6 +10,19 @@ platforms:
 - linux
 metadata:
   flx:
+    title: Run the whole crew as one
+    why: "The brief, the repricer, the inbox, the bidder and trip requests, run as one crew. Accepting a trip, bids and anything with money still wait for you."
+    never:
+    - "It never accepts a trip, places a bid or moves money without your yes."
+    - "It never reprices a car during a trip, or bids a car that’s already out."
+    mode: waits
+    preview:
+      title: "Today so far"
+      body: "Repriced 2 cars, answered 3 driver questions and drafted 1 bid."
+      ask: "1 bid waits for you"
+      reply: "Approved"
+      done: "Bid placed. Next check in 15 minutes."
+    waits: Accepting a trip, bids and anything with money wait for you
     tools:
     - read_attention
     - read_trip_requests
@@ -25,7 +38,7 @@ metadata:
     - trips_respond
     - trips_screening_decision
     - trips_record_dropoff
-    - money_file_mileage_fee
+    - money_file_fee
     - money_withdraw_proposal
     scopes:
     - read
@@ -44,8 +57,7 @@ metadata:
     - fill-empty-days
     - answer-faster
     - track-the-money
-    flow: Every 15 minutes → runs the brief, repricer, inbox, bidder, trips and fees together, deconflicted
-      → anything with money waits for you
+    flow: Every 15 minutes → runs the brief, repricer, inbox, bidder and trip requests together → you approve accepting a trip, every bid and anything with money
     agents:
     - openclaw
     - hermes
@@ -115,7 +127,7 @@ Run the parts in order each cycle, and never let two fight over the same trip:
 5. **Run requests** — `trips_respond` (declines and new dates by the host's rules; an
    accept goes to the host for approval), `trips_screening_decision`,
    `trips_record_dropoff`. (See `trip-concierge`.)
-6. **File the mileage fee** — `money_file_mileage_fee`, staged for the host's approval.
+6. **File the mileage fee** — `money_file_fee` with `kind: mileage_overage`, staged for the host's approval.
    (See `mileage-fee-filer`.)
 
 ## Pitfalls

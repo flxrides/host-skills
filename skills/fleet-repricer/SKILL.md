@@ -10,6 +10,16 @@ platforms:
 - linux
 metadata:
   flx:
+    title: Reprice your cars overnight
+    why: "Demand moves every day. Each car is repriced overnight to what’s nearby, inside the floor and ceiling you set, and every change can be undone."
+    never:
+    - "It never prices outside your floor and ceiling. FLX refuses it."
+    - "It never blocks dates, answers a driver or touches money."
+    mode: runs
+    preview:
+      title: "Tonight’s prices"
+      body: "Civic from $295 to $310 a week. Niro unchanged. Both inside your floor and ceiling."
+    waits: Runs on its own, inside your floor and ceiling
     tools:
     - read_attention
     - listings_update_pricing
@@ -24,6 +34,7 @@ metadata:
     - flx
     jobs:
     - fill-empty-days
+    - price-it-right
     flow: Every night → reads each car's rate and nearby demand → reprices inside your floor and ceiling
       (reversible, runs on its own)
     agents:

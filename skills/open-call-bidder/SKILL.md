@@ -10,6 +10,19 @@ platforms:
 - linux
 metadata:
   flx:
+    title: Keep a standing bid on calls that fit
+    why: "Reach the open calls that fit before another host does. Your standing bid is drafted on each one and waits for your yes."
+    never:
+    - "It never places a bid without your yes."
+    - "It never messages the driver or moves money."
+    mode: waits
+    preview:
+      title: "Bid drafted"
+      body: "The Niro on a 4-week hybrid call, at $320 a week."
+      ask: "Approve it in FLX"
+      reply: "Approved"
+      done: "Your bid is on the board."
+    waits: Each bid waits for you
     tools:
     - read_open_calls
     - trips_place_bid
@@ -25,8 +38,7 @@ metadata:
     - flx
     jobs:
     - find-drivers
-    flow: Every 5 minutes → finds open calls that fit a car → drafts your standing bid (each bid waits
-      for you)
+    flow: Every 5 minutes → finds open calls that fit a car → drafts your standing bid → you approve it, and it's placed
     agents:
     - openclaw
     - hermes

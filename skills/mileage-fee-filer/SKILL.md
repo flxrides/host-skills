@@ -10,10 +10,18 @@ platforms:
 - linux
 metadata:
   flx:
+    title: File the mileage fee after a return
+    mode: waits
+    preview:
+      title: "Mileage fee filed"
+      body: "The Civic came back 140 miles over. FLX computed the fee."
+      ask: "Approve it in FLX"
+    listed: false
+    waits: Each fee waits for you
     tools:
     - read_proposals
     - read_trip
-    - money_file_mileage_fee
+    - money_file_fee
     - money_withdraw_proposal
     scopes:
     - read
@@ -74,9 +82,9 @@ nothing is charged until they approve it.
 1. Call `read_proposals` and read returned trips to find any over their mileage allowance
    with no fee staged or filed.
 2. Call `read_trip` for the trip's allowance and per-mile rate.
-3. Call `money_file_mileage_fee` with `dry_run: true` — it returns the amount FLX
+3. Call `money_file_fee` with `kind: mileage_overage` and `dry_run: true` — it returns the amount FLX
    computed, without filing. Stop if it's zero (no overage).
-4. Call `money_file_mileage_fee` for real with a per-trip idempotency key, so a retry or
+4. Call `money_file_fee` (`kind: mileage_overage`) for real with a per-trip idempotency key, so a retry or
    the catch-up never files twice. It is staged for the host's approval.
 5. If a fee was staged in error, call `money_withdraw_proposal` with its action id while
    it's still waiting — nothing executes; the row becomes `withdrawn`.

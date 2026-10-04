@@ -10,6 +10,16 @@ platforms:
 - linux
 metadata:
   flx:
+    title: Hear about open calls that fit an idle car
+    why: "Drivers post open calls every day. This tells you which ones fit an idle car, so you bid on the right ones yourself."
+    never:
+    - "It never bids, messages a driver or changes anything."
+    - "It suggests. Whether to bid is always your call."
+    mode: reads
+    preview:
+      title: "3 open calls fit an idle car"
+      body: "An SUV in Denver for 2 weeks fits your 4Runner. 2 hosts are bidding."
+    waits: Reads only
     tools:
     - read_open_calls
     - read_attention

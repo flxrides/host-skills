@@ -5,6 +5,16 @@ version: 1.0.0
 author: FLX Rides
 metadata:
   flx:
+    title: Get a morning brief on your business
+    why: "One morning read of your business: what needs you, what’s waiting for your yes, and what changed overnight."
+    never:
+    - "It changes nothing on FLX."
+    - "It only tells you. You act in FLX."
+    mode: reads
+    preview:
+      title: "Your morning brief"
+      body: "3 things need you: a trip request, a review due, and a document expiring Friday."
+    waits: Reads only
     tools: [read_attention, read_proposals, read_events, read_policy]
     scopes: [read]
     tier: 1

@@ -5,6 +5,16 @@ version: 1.0.0
 author: FLX Rides
 metadata:
   flx:
+    title: Check what your agent can do on FLX
+    why: "The first recipe to install. It checks your agent’s connection to FLX and tells you, in plain words, what it can and can’t do."
+    never:
+    - "It changes nothing on FLX."
+    - "It only checks the connection and reports back."
+    mode: reads
+    preview:
+      title: "Connected to FLX"
+      body: "I can see your 3 cars, trips and messages. Tell me what to take on first."
+    waits: Reads only
     tools: [whoami, read_grants, read_policy, read_attention]
     scopes: [read]
     tier: 1

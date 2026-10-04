@@ -10,6 +10,17 @@ platforms:
 - linux
 metadata:
   flx:
+    title: Answer driver questions in your voice
+    why: "Drivers get an answer in your voice the moment they ask: late pickups, extensions, where to park."
+    never:
+    - "It never starts a conversation. The driver writes first."
+    - "It can’t change a price or a trip, or move money."
+    - "When it isn’t sure, it asks you instead of guessing."
+    mode: runs
+    preview:
+      title: "Answered Maya"
+      body: "“Park in bay 4. The code is on your trip page.” Sent in her trip thread."
+    waits: Replies in threads you are already in
     tools:
     - read_conversations
     - read_conversation
